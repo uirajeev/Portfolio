@@ -1,0 +1,117 @@
+.header {
+  &-container {
+    display: flex;
+    justify-content: center;
+    height: 90px;
+    color: var(--white);
+    background: #282b44;
+  }
+
+  &-parent {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 100%;
+    max-width: 1024px;
+    width: 80%;
+    color: var(--white);
+  }
+
+  &-logo {
+    font-size: 50px;
+    font-family: 'Poppins ExtraBold';
+    color: var(--white);
+  }
+
+  &-options {
+    display: flex;
+    align-items: center;
+  }
+
+  &-option {
+    font-size: 16px;
+    cursor: pointer;
+    font-weight: 600;
+    cursor: pointer;
+
+    &-seperator {
+      margin: 0 50px 0 0;
+      color: var(--white);
+    }
+  }
+
+  &-hamburger {
+    display: none;
+    color: var(--white);
+  }
+
+  &-menu-close {
+    display: none;
+    position: absolute;
+    right: 20px;
+    top: 30px;
+  }
+}
+
+.selected-header-option {
+  color: #ff5823;
+}
+
+/*IPAD PRO RESPONSIVENESS*/
+@media only screen and (max-width: 970px) {
+  .header {
+    &-hamburger {
+      display: block;
+      &-bars {
+        font-size: 36px;
+        cursor: pointer;
+        margin: 0px 10px;
+        color: var(--white);
+      }
+    }
+    &-parent {
+      width: 100%;
+      padding: 0 40px;
+      position: relative;
+    }
+    &-options {
+      display: flex;
+      flex-direction: column;
+      position: absolute;
+      left: -100%;
+      transition: all 0.8s ease-out;
+      top: 0px;
+      height: 100vh;
+      width: 100%;
+      justify-content: center;
+      background-color: #1f2235;
+      z-index: 1000;
+      opacity: 0.5;
+    }
+    &-option {
+      width: 100%;
+      text-align: center;
+      padding: 12px 0;
+      border-bottom: 1px solid #5153728d;
+
+      &:hover {
+        background-color: #191a278d;
+      }
+      &-seperator {
+        margin: 0;
+      }
+    }
+
+    &-menu-close {
+      display: block;
+    }
+  }
+  .show-hamburger-options {
+    left: 0;
+    opacity: 1;
+  }
+
+  //   .selected-header-option {
+  //     color: var(--white);
+  //   }
+}

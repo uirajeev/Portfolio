@@ -1,0 +1,237 @@
+.resume {
+  &-container {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    min-height: fit-content;
+    margin: 120px 0;
+  }
+  &-screen-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    height: 360px;
+    width: 100%;
+  }
+  &-card {
+    display: flex;
+    height: 360px;
+    width: 1000px;
+  }
+
+  &-details {
+    &-carousal {
+      transition: transform 1s ease-out;
+    }
+  }
+
+  &-bullets {
+    height: 100%;
+    box-shadow: 15px 0 9px -15px #1f2235;
+    width: 320px;
+    border-top: 1px solid #1f223520;
+    border-bottom: 1px solid #1f223520;
+    border-radius: 20px;
+
+    &-container {
+      display: flex;
+      align-items: center;
+      height: 100%;
+      width: 100%;
+      position: relative;
+    }
+
+    &-details {
+      flex-grow: 1;
+      width: 600px;
+      overflow: hidden;
+      padding-left: 70px;
+    }
+
+    &-icons {
+      width: 34px;
+      height: 100%;
+      background-color: #1f2235;
+      position: absolute;
+      z-index: 1;
+    }
+  }
+
+  &-bullet {
+    width: 86%;
+    position: relative;
+    z-index: 2;
+    .bullet {
+      display: flex;
+      align-items: center;
+      background-color: #1f2235;
+      height: 40px;
+      margin: 15px 0;
+      padding: 0 8px;
+      border-radius: 20px;
+      width: 30px;
+      transition: width 0.6s ease;
+      cursor: pointer;
+
+      &.selected-bullet {
+        color: #fff;
+        width: 100%;
+      }
+
+      &-label {
+        font-size: 14px;
+        white-space: nowrap;
+        font-family: 'Poppins SemiBold';
+      }
+      &-logo {
+        height: 16px;
+        margin: 0 30px 0 0;
+      }
+    }
+  }
+
+  &-heading {
+    display: flex;
+    flex-direction: column;
+    &-main {
+      position: relative;
+      display: flex;
+      justify-content: space-between;
+
+      span {
+        color: var(--dark-orange);
+        font-size: 16px;
+        font-family: 'Poppins SemiBold';
+      }
+    }
+
+    &-bullet {
+      position: absolute;
+      left: -30px;
+      height: 15px;
+      width: 15px;
+      top: 5px;
+      background-color: var(--dark-orange);
+      border-radius: 50%;
+    }
+
+    &-sub {
+      font-size: 14px;
+      font-family: 'Poppins SemiBold';
+      color: #111;
+      margin: 10px 0 0 0;
+    }
+
+    &-desc {
+      font-size: 12px;
+      text-align: justify;
+    }
+  }
+
+  &-date {
+    background-color: var(--dark-orange);
+    padding: 4px 12px;
+    font-size: 14px;
+    border-radius: 14px;
+    color: #fff;
+  }
+}
+.experience {
+  &-description {
+    margin-top: 10px;
+    text-align: justify;
+    max-width: 100%;
+
+    &-text {
+      font-size: 14px;
+    }
+  }
+}
+
+.skills {
+  &-parent {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    width: 50%;
+    span {
+      font-size: 14px;
+      font-family: 'Poppins SemiBold';
+      color: var(--dark-orange);
+      margin-bottom: 5px;
+    }
+  }
+
+  &-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+
+  &-percentage {
+    position: relative;
+    height: 10px;
+    width: 70%;
+    background-color: var(--dark-orange);
+
+    .active-percentage-bar {
+      height: 10px;
+      transition: 0.8s ease;
+      position: absolute;
+      background: #111;
+    }
+  }
+}
+
+@media only screen and (max-width: 1110px) {
+  .resume {
+    &-card {
+      width: 880px;
+    }
+
+    &-bullet-details {
+      padding: 0 0 0 70px;
+    }
+  }
+}
+
+/* IPAD RESPONSIVENESS */
+@media only screen and (max-width: 1023px) {
+  .resume {
+    &-content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    &-card {
+      height: fit-content;
+      display: flex;
+      flex-direction: column;
+      margin: 30px 0;
+      align-items: center;
+      width: 90%;
+    }
+
+    &-bullets {
+      &-details {
+        height: 360px;
+        padding: 0;
+        width: fit-content;
+      }
+    }
+
+    &-bullet {
+      margin: 30px 0;
+      width: 100%;
+      .bullet {
+        &.selected-bullet {
+          width: 90%;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,213 @@
+.profile {
+  &-container {
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    height: 10%;
+    min-height: fit-content;
+  }
+
+  &-parent {
+    display: flex;
+    align-items: center;
+    gap: 60px;
+    color: aliceblue;
+
+    .col {
+      &-icon {
+        a {
+          color: var(--white);
+          margin: 8px;
+          display: inline-block;
+          transition: all ease 0.5s;
+          font-size: 24px;
+          cursor: pointer;
+
+          &:hover {
+            transform: scale(1.5);
+          }
+        }
+      }
+    }
+  }
+
+  &-details {
+    padding: 0 20px;
+    &-name {
+      font-size: 24px;
+      font-family: 'Poppins SemiBold';
+    }
+
+    &-quotes {
+      display: flex;
+      flex-direction: column;
+      margin: 14px 0 40px 0;
+
+      h1 {
+        font-size: 28px;
+        font-family: cursive;
+      }
+    }
+
+    &-tagline {
+      font-size: 19px;
+      margin: 25px 0 0 0;
+      font-family: 'Poppins Light';
+    }
+  }
+
+  &-options {
+    .highlighted-btn {
+      margin: 0 0 0 28px;
+      border-radius: 12px solid white;
+      transition: all ease 0.5s;
+
+      &:hover {
+        background-color: cornsilk;
+        color: #111;
+      }
+    }
+  }
+
+  &-picture {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 1px 0 0 var(--white);
+    border-radius: 50%;
+    width: 380px;
+    height: 380px;
+    margin-right: 10px;
+  }
+
+  &-bg {
+    width: 92%;
+    height: 92%;
+    border-radius: 50%;
+    background: url('../../../assets/images/profilephoto.jpg') no-repeat center;
+    background-size: cover;
+    transition: all 1s ease-out;
+
+    &:hover {
+      transform: scale(1.07);
+    }
+  }
+}
+
+.primary-text {
+  color: var(--white);
+}
+.highlighted-text {
+  color: var(--dark-orange);
+}
+
+@media screen and (max-width: 1110px) {
+  .profile {
+    &-parent {
+      gap: 40px;
+    }
+
+    &-details {
+      &-name {
+        font-size: 20px;
+      }
+
+      &-quotes {
+        max-width: 584.96px;
+      }
+    }
+
+    &-options {
+      .btn {
+        width: 120px;
+        padding: 11px 0;
+        z-index: 700;
+      }
+    }
+  }
+
+  .primary-text {
+    font-size: 20px;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .profile {
+    &-parent {
+      gap: 20px;
+    }
+    &-picture {
+      width: 320px;
+      height: 320px;
+    }
+    &-details {
+      &-name {
+        font-size: 20px;
+      }
+
+      &-quotes {
+        max-width: 500px;
+      }
+    }
+  }
+
+  .primary-text {
+    font-size: 20px;
+  }
+}
+
+@media screen and (max-width: 910px) {
+  .profile {
+    &-parent {
+      gap: 10px;
+    }
+    &-picture {
+      width: 300px;
+      height: 300px;
+    }
+
+    &-details {
+      &-quotes {
+        max-width: 400px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 810px) {
+  .profile {
+    &-parent {
+      gap: 0;
+      flex-direction: column-reverse;
+      margin: 40px 0 0 0;
+    }
+    &-picture {
+      margin-right: 0;
+    }
+
+    &-details {
+      margin: 25px 0 0 0;
+      &-quotes {
+        max-width: 90% !important;
+      }
+    }
+
+    &-options {
+      display: flex;
+      justify-content: space-between;
+      .highlighted-btn {
+        margin: 0;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 375px) {
+  .profile {
+    &-picture {
+      width: 275px;
+      height: 275px;
+    }
+  }
+}
