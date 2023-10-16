@@ -1,7 +1,10 @@
 import { useEffect, useState } from 'react';
+import { toast } from 'react-toastify';
+import axios from 'axios';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 import Headings from '../../component/Headings/Headings';
+import ScrollTop from '../../component/ScrollTop';
 import ScrollService from '../../services/scrollService';
 import Animations from '../../utilities/Animations';
 
@@ -9,7 +12,7 @@ import './style.scss';
 
 const Contact = ({ id }) => {
   const fadeInScreenHandler = (screen) => {
-    if (screen.fadeScreen !== id) return;
+    if (screen.fadeInScreen !== id) return;
 
     Animations.animations.fadeInScreen(id);
   };
@@ -20,21 +23,72 @@ const Contact = ({ id }) => {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [phone, setPhone] = useState('');
+  const [nameError, setNameError] = useState(false);
+  const [emailError, setEmailError] = useState(false);
+  const [phoneError, setPhoneError] = useState(false);
   const [message, setMessage] = useState('');
   const [banner, setBanner] = useState('');
   const [bool, setBool] = useState(false);
 
+  const nameRegex = /^[A-Za-z\s]+$/;
+  const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+  const phoneNumberRegex = /^[6-9]\d{9}$/;
+
   const handleName = (e) => {
-    setName(e.target.value);
+    const val = e.target.value;
+    setName(val);
+    setNameError(!nameRegex.test(val));
   };
   const handleEmail = (e) => {
     setEmail(e.target.value);
   };
+  const handleEmailError = (e) => {
+    setEmailError(!emailRegex.test(e.target.value));
+  };
   const handlePhone = (e) => {
     setPhone(e.target.value);
   };
+  const handlePhoneError = (e) => {
+    setPhoneError(!phoneNumberRegex.test(e.target.value));
+  };
   const handleMessage = (e) => {
     setMessage(e.target.value);
+  };
+
+  const submitForm = async (e) => {
+    e.preventDefault();
+    try {
+      let data = {
+        name,
+        email,
+        phone,
+        message,
+      };
+      setBool(true);
+      const res = await axios.post('/contact', data);
+
+      if (
+        name.length === 0 ||
+        nameError ||
+        email.length === 0 ||
+        emailError ||
+        phone.length === 0 ||
+        phoneError ||
+        message.length === 0
+      ) {
+        const { msg } = res.data;
+        toast.error(msg);
+        setBanner(msg);
+      } else if (res.status === 200) {
+        const { msg } = res.data;
+        toast.success(msg);
+        setBanner(msg);
+      }
+      setBool(false);
+    } catch (error) {
+      console.log(error);
+      setBool(false);
+    }
   };
 
   useEffect(() => {
@@ -45,7 +99,7 @@ const Contact = ({ id }) => {
   }, [fadeInSubscription]);
 
   return (
-    <div className="contact-container" id={id || ''}>
+    <div className="contact-container fade-in" id={id || ''}>
       <Headings title={'Contact Me'} subtitle={"Let's keep in touch"} />
       <div className="central-form">
         <div className="col">
@@ -76,7 +130,7 @@ const Contact = ({ id }) => {
               alt="no internet"
             />
           </div>
-          <form action="">
+          <form onSubmit={submitForm}>
             <p>{banner}</p>
             <label htmlFor="name">Name</label>
             <input
@@ -86,6 +140,7 @@ const Contact = ({ id }) => {
               placeholder="Your name"
               onChange={handleName}
               value={name}
+              className={nameError ? 'error' : ''}
             />
 
             <label htmlFor="email">Email</label>
@@ -95,6 +150,8 @@ const Contact = ({ id }) => {
               id="email"
               placeholder="example@gmail.com"
               onChange={handleEmail}
+              onBlur={handleEmailError}
+              className={emailError ? 'error' : ''}
               value={email}
             />
 
@@ -105,6 +162,8 @@ const Contact = ({ id }) => {
               id="phone"
               placeholder="Your 10 digit phone number"
               onChange={handlePhone}
+              onBlur={handlePhoneError}
+              className={phoneError ? 'error' : ''}
               value={phone}
             />
 
@@ -119,13 +178,20 @@ const Contact = ({ id }) => {
 
             <div className="send-btn">
               <button type="submit">
-                Send
-                <FontAwesomeIcon icon="fa fa-paper-plane" />
+                Send <FontAwesomeIcon icon="fa fa-paper-plane" />
               </button>
+              {bool ? (
+                <b className="load">
+                  <img src={require('../../assets/images/load2.gif')} alt="" />
+                </b>
+              ) : (
+                ''
+              )}
             </div>
           </form>
         </div>
       </div>
+      <ScrollTop />
     </div>
   );
 };

@@ -13,7 +13,7 @@ import './style.scss';
 
 const Blogs = ({ id }) => {
   const fadeInScreenHandler = (screen) => {
-    if (screen.fadeScreen !== id) return;
+    if (screen.fadeInScreen !== id) return;
 
     Animations.animations.fadeInScreen(id);
   };
@@ -49,7 +49,7 @@ const Blogs = ({ id }) => {
     };
   }, [fadeInSubscription]);
   return (
-    <div id={id || ''}>
+    <div className=" fade-in" id={id || ''}>
       <Headings title={'Blogs'} subtitle={'Ideas are easy.'} />
       <section className="blogs-section">
         <div className="container">

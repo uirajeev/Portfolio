@@ -3,9 +3,9 @@ import BannerBottom from './BannerBottom/BannerBottom';
 import Profile from './Profile/Profile';
 import './style.scss';
 
-const Home = () => {
+const Home = ({ id }) => {
   return (
-    <div className="home-container">
+    <div className="home-container" id={id || ''}>
       <Header />
       <Profile />
       <BannerBottom />

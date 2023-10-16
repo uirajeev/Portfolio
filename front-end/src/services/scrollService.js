@@ -9,6 +9,7 @@ export default class ScrollService {
 
   constructor() {
     window.addEventListener('scroll', this.checkCurrentScreenUnderViewport);
+    this.position = 0;
   }
 
   scrollToContact = () => {
@@ -21,6 +22,10 @@ export default class ScrollService {
     let homeScreen = document.getElementById('Home');
     if (!homeScreen) return;
     homeScreen.scrollIntoView({ behavior: 'smooth' });
+  };
+
+  handleScroll = () => {
+    this.position = window.screenY;
   };
 
   isElementInView = (elm, type) => {
@@ -42,6 +47,7 @@ export default class ScrollService {
   };
 
   checkCurrentScreenUnderViewport = (event) => {
+    this.handleScroll();
     if (!event || Object.keys(event).length < 1) return;
 
     for (let screen of TOTAL_PAGES) {

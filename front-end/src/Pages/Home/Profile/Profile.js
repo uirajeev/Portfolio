@@ -1,5 +1,6 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { TypeAnimation } from 'react-type-animation';
+import ScrollService from '../../../services/scrollService';
 import tagline from './tagline';
 
 import './style.scss';
@@ -47,8 +48,13 @@ const Profile = () => {
             </div>
           </div>
           <div className="profile-options">
-            {/* onClick={() => ScrollService.scrollHandler.scrollToHireMe()} */}
-            <button className="btn primary-btn"> Contact Me </button>
+            <button
+              className="btn primary-btn"
+              onClick={() => ScrollService.scrollHandler.scrollToContact()}
+            >
+              {' '}
+              Contact Me{' '}
+            </button>
             <a href="ehizcv.pdf" download="Ehiedu Ehizcv.pdf">
               <button className="btn highlighted-btn">View Profile</button>
             </a>

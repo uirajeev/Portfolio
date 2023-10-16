@@ -9,7 +9,7 @@ const Resume = ({ id }) => {
   const [selectedPoint, setSelectedPoint] = useState(0);
   const [carousalOffsetStyle, setCarousalOffsetStyle] = useState({});
   const fadeInScreenHandler = (screen) => {
-    if (screen.fadeScreen !== id) return;
+    if (screen.fadeInScreen !== id) return;
 
     Animations.animations.fadeInScreen(id);
   };
@@ -246,7 +246,7 @@ const Resume = ({ id }) => {
   }, [fadeInSubscription]);
 
   return (
-    <div className="resume-container screen-container" id={id || ''}>
+    <div className="resume-container screen-container fade-in" id={id || ''}>
       <div className="resume-content">
         <Headings title="Resume" subtitle="My formal Bio Details" />
         <div className="resume-card">

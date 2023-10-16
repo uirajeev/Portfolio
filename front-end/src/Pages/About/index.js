@@ -7,7 +7,7 @@ import './style.scss';
 
 const About = ({ id }) => {
   const fadeInScreenHandler = (screen) => {
-    if (screen.fadeScreen !== id) return;
+    if (screen.fadeInScreen !== id) return;
 
     Animations.animations.fadeInScreen(id);
   };
@@ -39,7 +39,7 @@ const About = ({ id }) => {
     </div>
   ));
   return (
-    <div className="about-container screen-container" id={id || ''}>
+    <div className="about-container screen-container fade-in" id={id || ''}>
       <div className="about-parent">
         <Headings title={'About Me'} subtitle={'Why choose me?'} />
         <div className="about-card">
@@ -70,8 +70,12 @@ const About = ({ id }) => {
               {bulletsPoints}
             </div>
             <div className="about-options">
-              {/* onClick={() => ScrollService.scrollHandler.scrollToHireMe()} */}
-              <button className="btn primary-btn"> Contact Me </button>
+              <button
+                className="btn primary-btn"
+                onClick={() => ScrollService.scrollHandler.scrollToContact()}
+              >
+                Contact Me
+              </button>
               <a href="ehizcv.pdf" download="Ehiedu Ehizcv.pdf">
                 <button className="btn highlighted-btn">Download</button>
               </a>
