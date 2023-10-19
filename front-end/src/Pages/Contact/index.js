@@ -64,9 +64,6 @@ const Contact = ({ id }) => {
         phone,
         message,
       };
-      setBool(true);
-      const res = await axios.post('/contact', data);
-
       if (
         name.length === 0 ||
         nameError ||
@@ -76,12 +73,23 @@ const Contact = ({ id }) => {
         phoneError ||
         message.length === 0
       ) {
-        const { msg } = res.data;
-        toast.error(msg);
-        setBanner(msg);
-      } else if (res.status === 200) {
+        toast.error('Please fill the all fields');
+        setBanner('Please fill the all fields');
+        return;
+      }
+      setBool(true);
+      const res = await axios.post('/contact', data);
+      if (res.status === 200) {
         const { msg } = res.data;
         toast.success(msg);
+        setBanner(msg);
+        setName('');
+        setEmail('');
+        setPhone('');
+        setMessage('');
+      } else {
+        const { msg } = res.data;
+        toast.error(msg);
         setBanner(msg);
       }
       setBool(false);

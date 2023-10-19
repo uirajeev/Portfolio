@@ -72,7 +72,7 @@ const Header = () => {
           />
         </div>
         <div className="header-logo">
-          <span>EDUBABA</span>
+          <span>R SINGH</span>
         </div>
         <div
           className={

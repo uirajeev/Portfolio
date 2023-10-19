@@ -88,8 +88,11 @@ const Blogs = ({ id }) => {
                     </ul>
                   </div>
                   <div className="client-info">
-                    <img src="img/mike.png" alt="no internet" />
-                    <h4>My Name</h4>
+                    <img
+                      src={require('../../assets/images/mike.png')}
+                      alt="no internet"
+                    />
+                    <h4>Rajeev singh</h4>
                     <p>Development Officer</p>
                   </div>
                 </div>
@@ -123,8 +126,11 @@ const Blogs = ({ id }) => {
                     </ul>
                   </div>
                   <div className="client-info">
-                    <img src="img/mike.png" alt="no internet" />
-                    <h4>My Name</h4>
+                    <img
+                      src={require('../../assets/images/mike.png')}
+                      alt="no internet"
+                    />
+                    <h4>Rajeev singh</h4>
                     <p>Development Officer</p>
                   </div>
                 </div>
@@ -158,8 +164,11 @@ const Blogs = ({ id }) => {
                     </ul>
                   </div>
                   <div className="client-info">
-                    <img src="img/mike.png" alt="no internet" />
-                    <h4>My Name</h4>
+                    <img
+                      src={require('../../assets/images/mike.png')}
+                      alt="no internet"
+                    />
+                    <h4>Rajeev singh</h4>
                     <p>Development Officer</p>
                   </div>
                 </div>
@@ -193,8 +202,11 @@ const Blogs = ({ id }) => {
                     </ul>
                   </div>
                   <div className="client-info">
-                    <img src="img/mike.png" alt="no internet" />
-                    <h4>My Name</h4>
+                    <img
+                      src={require('../../assets/images/mike.png')}
+                      alt="no internet"
+                    />
+                    <h4>Rajeev singh</h4>
                     <p>Development Officer</p>
                   </div>
                 </div>
