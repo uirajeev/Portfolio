@@ -17,14 +17,14 @@ router.post('/contact', (req, res) => {
     service: 'Gmail',
     port: 465,
     auth: {
-      user: 'rajeevkumar.web@gmail.com',
+      user: process.env.MAIL_TO,
       pass: process.env.ACCESS_CODE,
     },
   });
 
   const mailOptions = {
     from: email,
-    to: 'rajeevkumar.web@gmail.com',
+    to: process.env.MAIL_TO,
     subject: `Message from ${name}`,
     html: `
     <h3>Infromation</h3>
