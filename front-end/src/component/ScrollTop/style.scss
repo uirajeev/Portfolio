@@ -11,7 +11,7 @@
   bottom: 20px;
 }
 
-@media only screen and (min-width: 475px) {
+@media only screen and (max-width: 776px) {
   .scroll-container {
     bottom: -70px;
   }

@@ -151,6 +151,14 @@
   }
 }
 
+@media only screen and (max-width: 425px) {
+  .blogs {
+    &-footer-image {
+      margin-top: -22px;
+    }
+  }
+}
+
 @media only screen and (max-width: 352px) {
   .blogs {
     &-footer-image {
