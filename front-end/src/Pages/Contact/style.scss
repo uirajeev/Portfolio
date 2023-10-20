@@ -184,3 +184,41 @@ h2 {
     }
   }
 }
+
+@media screen and (max-width: 940px) {
+  .contact {
+    &-container {
+      .central-form {
+        form {
+          position: relative;
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 776px) {
+  .contact {
+    &-container {
+      .central-form {
+        .back-form {
+          width: 100%;
+          max-width: 100%;
+          .img-back {
+            h3 {
+              margin-top: 10px;
+            }
+            img {
+              display: none;
+            }
+          }
+        }
+
+        form {
+          flex: 0.9;
+          margin-top: 20px;
+        }
+      }
+    }
+  }
+}

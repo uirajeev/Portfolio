@@ -10,6 +10,12 @@
   cursor: pointer;
   bottom: 20px;
 }
+
+@media only screen and (min-width: 475px) {
+  .scroll-container {
+    bottom: -70px;
+  }
+}
 @media only screen and (min-width: 475px) {
   .scroll-container {
     margin-bottom: 10px;

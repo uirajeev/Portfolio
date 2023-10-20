@@ -94,6 +94,14 @@ const Resume = ({ id }) => {
 
   const resumeDetails = [
     <div className="resume-screen-container" key="education">
+      <h3 className="resume-mobile-title">
+        <img
+          className="bullet-logo"
+          src={require(`../../assets/Resume/${resumeBullets[0].logoSrc}`)}
+          alt="B"
+        />
+        <span className="bullet-label">{resumeBullets[0].label}</span>
+      </h3>
       <ResumeHeading
         heading={'University of Legon Accra, Ghana'}
         subHeading={'BACHELOR OF SCIENCE INFORMATION TECHNOLOGY'}
@@ -117,6 +125,14 @@ const Resume = ({ id }) => {
 
     /* WORK EXPERIENCE */
     <div className="resume-screen-container" key="work-experience">
+      <h3 className="resume-mobile-title second">
+        <img
+          className="bullet-logo"
+          src={require(`../../assets/Resume/${resumeBullets[1].logoSrc}`)}
+          alt="B"
+        />
+        <span className="bullet-label">{resumeBullets[1].label}</span>
+      </h3>
       <div className="experience-container">
         <ResumeHeading
           heading={'Ehizeex Technoloy'}
@@ -151,23 +167,41 @@ const Resume = ({ id }) => {
     </div>,
 
     /* PROGRAMMING SKILLS */
-    <div className="resume-screen-container skills-container" key="skills">
-      {skillsDetails.map((skill) => (
-        <div className="skills-parent" key={skill.skill}>
-          <div className="resume-heading-bullet"></div>
-          <span>{skill.skill}</span>
-          <div className="skills-percentage">
-            <div
-              style={{ width: skill.ratingPercentage + '%' }}
-              className="active-percentage-bar"
-            ></div>
+    <div className="resume-screen-container" key="skills">
+      <h3 className="resume-mobile-title second">
+        <img
+          className="bullet-logo"
+          src={require(`../../assets/Resume/${resumeBullets[2].logoSrc}`)}
+          alt="B"
+        />
+        <span className="bullet-label">{resumeBullets[2].label}</span>
+      </h3>
+      <div className="skills-container">
+        {skillsDetails.map((skill) => (
+          <div className="skills-parent" key={skill.skill}>
+            <div className="resume-heading-bullet"></div>
+            <span>{skill.skill}</span>
+            <div className="skills-percentage">
+              <div
+                style={{ width: skill.ratingPercentage + '%' }}
+                className="active-percentage-bar"
+              ></div>
+            </div>
           </div>
-        </div>
-      ))}
+        ))}
+      </div>
     </div>,
 
     /* PROJECTS */
     <div className="resume-screen-container" key="projects">
+      <h3 className="resume-mobile-title second">
+        <img
+          className="bullet-logo"
+          src={require(`../../assets/Resume/${resumeBullets[3].logoSrc}`)}
+          alt="B"
+        />
+        <span className="bullet-label">{resumeBullets[3].label}</span>
+      </h3>
       {projectsDetails.map((projectsDetails) => (
         <ResumeHeading
           key={projectsDetails.title}
@@ -182,6 +216,14 @@ const Resume = ({ id }) => {
 
     /* Interests */
     <div className="resume-screen-container" key="interests">
+      <h3 className="resume-mobile-title second">
+        <img
+          className="bullet-logo"
+          src={require(`../../assets/Resume/${resumeBullets[4].logoSrc}`)}
+          alt="B"
+        />
+        <span className="bullet-label">{resumeBullets[4].label}</span>
+      </h3>
       <ResumeHeading
         heading="Teaching"
         description="Apart from being a tech enthusiast and a code writer, i also love to teach people what i know simply because i believe in sharing."

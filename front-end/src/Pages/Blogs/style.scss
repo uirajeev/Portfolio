@@ -93,3 +93,84 @@
     }
   }
 }
+
+@media only screen and (max-width: 1232px) {
+  .blogs {
+    &-footer-image {
+      margin-top: -70px;
+    }
+  }
+}
+
+@media only screen and (max-width: 1090px) {
+  .blogs {
+    &-footer-image {
+      margin-top: -60px;
+    }
+  }
+}
+
+@media only screen and (max-width: 1000px) {
+  .blogs {
+    &-footer-image {
+      margin-top: -50px;
+    }
+  }
+}
+
+/* IPAD RESPONSIVENESS */
+@media only screen and (max-width: 776px) {
+  .blogs {
+    &-footer-image {
+      margin-top: -43px;
+    }
+  }
+}
+
+@media only screen and (max-width: 666px) {
+  .blogs {
+    &-footer-image {
+      margin-top: -37px;
+    }
+  }
+}
+
+@media only screen and (max-width: 580px) {
+  .blogs {
+    &-footer-image {
+      margin-top: -32px;
+    }
+  }
+}
+
+@media only screen and (max-width: 495px) {
+  .blogs {
+    &-footer-image {
+      margin-top: -27px;
+    }
+  }
+}
+
+@media only screen and (max-width: 352px) {
+  .blogs {
+    &-footer-image {
+      margin-top: -19px;
+    }
+  }
+}
+
+@media only screen and (max-width: 302px) {
+  .blogs {
+    &-footer-image {
+      margin-top: -16px;
+    }
+  }
+}
+
+@media only screen and (max-width: 255px) {
+  .blogs {
+    &-footer-image {
+      margin-top: -14px;
+    }
+  }
+}
